@@ -1,0 +1,234 @@
+body {
+    margin: auto;
+    font-variant: all-small-caps;
+    background-color: #4CAF50;
+}
+
+p {
+  margin: 10px;
+}
+
+.turnPicker {
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  justify-content: space-around;
+  font-size: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.grid-container {
+    height: 400px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #4CAF50;
+    padding: 10px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .grid-item {
+    background-color: #ff5722;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    width: 92px;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input[type=text], select {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-variant: all-small-caps;
+    background-color: sandybrown;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-variant: all-small-caps;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  
+#winnerMsg {
+  display: flex;
+  flex-direction: column;
+}
+
+#playAgain {
+  background-color: #ff5722;
+}
+  
+.playerInput {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #ffc107;
+    padding: 20px;
+}
+
+.inputForm {
+    max-width: 1200px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex: 1;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#playertwoSlider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  pointer-events: none;
+  color: white;
+}
+
+/* Common panel style */
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  z-index: 999;
+  color: #000;
+  box-sizing: border-box;
+  background-color: #ECEFF1; 
+ }
+  
+  
+  /* panel content (only for animation delay after open) */
+  .panel__content {
+  opacity: 0;
+  will-change: margin-top;
+  transition: all 700ms; 
+  transition-delay: 600ms;
+  padding: 100px 200px;
+  margin-top: -5%; 
+ }
+  
+  /* Panel content animation after open */
+  .panel .panel__content {
+  opacity: 1;
+  margin-top: 0; 
+}
+  
+  /*  Specific panel "Fade" effect */
+  /* •••••••••••••••••••••••••••••••• */
+
+  .panel#fade {
+    background-color: #4CAF50;
+    opacity: .95;
+    transition: all 800ms;
+    pointer-events: auto; 
+}  
+
+.switch-button {
+    background: #ff5722;
+    border-radius: 30px;
+    overflow: hidden;
+    width: 120px;
+    text-align: center;
+    // font-size: 18px;
+    // letter-spacing: 1px;
+    // color: #155FFF;
+    position: relative;
+    padding-right: 120px;
+    position: relative;
+    color: white;
+  
+    // &:before {
+    //   content: "Player Two (O)";
+    //   position: absolute;
+    //   top: 0;
+    //   bottom: 0;
+    //   right: 0;
+    //   width: 120px;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   z-index: 3;
+    //   pointer-events: none;
+    //   color: white;
+    // }
+  
+    &-checkbox {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 2;
+  
+      &:checked + .switch-button-label:before {
+        transform: translateX(120px);
+        transition: transform 300ms linear;
+      }
+  
+      & + .switch-button-label {
+        position: relative;
+        padding: 15px 0;
+        display: block;
+        user-select: none;
+        pointer-events: none;
+  
+        &:before {
+          content: "";
+          background: #45a049;
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-radius: 30px;
+          transform: translateX(0);
+          transition: transform 300ms;
+        }
+  
+        .switch-button-label-span {
+          position: relative;
+        }
+      }
+    }
+  }
+  

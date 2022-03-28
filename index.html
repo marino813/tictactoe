@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A tic, a tac, and then a toe</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap');
+    </style>
+</head>
+<body>
+
+<div class="playerInput">
+    <form class="inputForm">
+        <div class="playerName">
+            <label for="playerO">Player One</label>
+            <input type="text" id="playerOne" name="playeroneName" placeholder="Player One name..">
+        </div>
+        <div class="playerName">
+            <label for="playerT">Player Two</label>
+            <input type="text" id="playerTwo" name="playertwoName" placeholder="Player Two name..">
+        </div>
+        
+        <div class="playerName turnPicker">
+            <p id="turnDisplay">Who goes first?</p>
+            <div class="switch-button">
+                <span id="playertwoSlider" class="switch-button-label-span">Player Two (O)</span>
+                <input class="switch-button-checkbox" type="checkbox"></input>
+                <label class="switch-button-label"><span id="playeroneSlider"  class="switch-button-label-span">Player One (X)</span></label>
+            </div>
+        </div>
+        <div class="playerName">
+            <input id="submitButton" type="submit" action="" value="Begin Game">
+        </div>
+    </form>
+</div>
+<!-- <div class="panel dog" id="fade">
+    <div class="panel__content">
+        <h1 id="winnerMsg">The winner is DOG!!!!</h1>
+        <input id="submitButton" type="submit" action="" value="Play again">
+    </div>
+</div> -->
+
+<script src="js/core.js"></script>
+
+</body> 
+</html>
